@@ -106,3 +106,105 @@ function addDepartment() {
         })
     })
 }
+
+// This allows us to add an employee to the table in out DB
+function addEmployee() {
+    inquirer.prompt([{
+            type: "input",
+            name: "firstName",
+            message: "What is the employees first name?"
+        },
+        {
+            type: "input",
+            name: "lastName",
+            message: "What is the employees last name?"
+        },
+        {
+            type: "number",
+            name: "roleId",
+            message: "What is the employees role ID"
+        },
+        {
+            type: "number",
+            name: "managerId",
+            message: "What is the employees manager's ID?"
+        }
+    ]).then(function(res) {
+        connection.query('INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)', [res.firstName, res.lastName, res.roleId, res.managerId], function(err, data) {
+            if (err) throw err;
+            console.log(`Inserted ${res.firstName} into employee database. \n`);
+            userInput();
+        })
+    })
+}
+
+// This allows us to add new roles to the table in our DB
+function addRole() {
+    inquirer.prompt([
+        {
+            message: "enter title:",
+            type: "input",
+            name: "title"
+        }, {
+            message: "enter salary:",
+            type: "number",
+            name: "salary"
+        }, {
+            message: "enter department ID:",
+            type: "number",
+            name: "department_id"
+        }
+    ]).then(function (res) {
+        connection.query("INSERT INTO role (title, salary, department_id) values (?, ?, ?)", [res.title, res.salary, res.department_id], function (err, data) {
+            if (err) throw err;
+            console.log(`Inserted ${res.title} into role database. \n`);
+            userInput();
+        })
+    })
+
+}
+
+// Delete department from deparment table
+function deleteDepartment() {
+    inquirer.prompt([{
+        type: "input",
+        name: "department_id",
+        message: "Which department id would you like to delete?"
+    }, ]).then(function(res) {
+        connection.query('DELETE FROM department WHERE id = ?', [res.department_id], function(err, data) {
+            if (err) throw err;
+            console.log(`Deleted ${res.department_id} from department database. \n`);
+            userInput();
+        })
+    })
+}
+
+// Delete employee from employee table
+function deleteEmployee() {
+    inquirer.prompt([{
+        type: "input",
+        name: "employee_id",
+        message: "Which employee would you like to delete?"
+    }, ]).then(function(res) {
+        connection.query('DELETE FROM employee WHERE id = ?', [res.employee_id], function(err, data) {
+            if (err) throw err;
+            console.log(`Deleted ${res.employee_id} from employee database. \n`);
+            userInput();
+        })
+    })
+}
+
+// Delete role from role table
+function deleteRole() {
+    inquirer.prompt([{
+        type: "input",
+        name: "role_id",
+        message: "Which role would you like to delete?"
+    }, ]).then(function(res) {
+        connection.query('DELETE FROM role WHERE id = ?', [res.role_id], function(err, data) {
+            if (err) throw err;
+            console.log(`Deleted ${res.role_id} from role database. \n`);
+            userInput();
+        })
+    })
+}
