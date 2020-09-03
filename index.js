@@ -27,15 +27,12 @@ function userInput() {
         type: "list",
         choices: [
             "add department",
-            "add role",
             "add employee",
+            "add role",
             "update employee role",
             "view all departments",
             "view all employees",
             "view all roles",
-            "delete department",
-            "delete employee",
-            "delete role",
             "QUIT"
         ],
         name: "choice"
@@ -47,39 +44,27 @@ function userInput() {
                 addDepartment()
                 break;
 
-            case "add role":
+            case "add employee":
                 addEmployee()
                 break;
 
-            case "add employee":
+            case "add role":
                 addRole()
                 break;
 
             case "update employee role":
-                deleteDepartment()
-                break;
-
-            case "view all departments":
-                deleteEmployee()
-                break;
-
-            case "view all employees":
-                deleteRole()
-                break;
-
-            case "view all roles":
                 updateEmployeeRole();
                 break;
 
-            case "delete department":
+            case "view all roles":
                 viewRoles()
                 break;
 
-            case "delete employee":
+            case "view all employees":
                 viewEmployees()
                 break;
 
-            case "delete role":
+            case "view all departments":
                 viewDepartments()
                 break;
 
@@ -162,51 +147,6 @@ function addRole() {
         })
     })
 
-}
-
-// Delete department from deparment table
-function deleteDepartment() {
-    inquirer.prompt([{
-        type: "input",
-        name: "department_id",
-        message: "Which department id would you like to delete?"
-    }, ]).then(function(res) {
-        connection.query('DELETE FROM department WHERE id = ?', [res.department_id], function(err, data) {
-            if (err) throw err;
-            console.log(`Deleted ${res.department_id} from department database. \n`);
-            userInput();
-        })
-    })
-}
-
-// Delete employee from employee table
-function deleteEmployee() {
-    inquirer.prompt([{
-        type: "input",
-        name: "employee_id",
-        message: "Which employee would you like to delete?"
-    }, ]).then(function(res) {
-        connection.query('DELETE FROM employee WHERE id = ?', [res.employee_id], function(err, data) {
-            if (err) throw err;
-            console.log(`Deleted ${res.employee_id} from employee database. \n`);
-            userInput();
-        })
-    })
-}
-
-// Delete role from role table
-function deleteRole() {
-    inquirer.prompt([{
-        type: "input",
-        name: "role_id",
-        message: "Which role would you like to delete?"
-    }, ]).then(function(res) {
-        connection.query('DELETE FROM role WHERE id = ?', [res.role_id], function(err, data) {
-            if (err) throw err;
-            console.log(`Deleted ${res.role_id} from role database. \n`);
-            userInput();
-        })
-    })
 }
 
 // Update role_id for employees in the DB

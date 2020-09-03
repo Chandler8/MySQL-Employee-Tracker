@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-blueviolet.svg)
 
-The following is a command line application that will allow for users to create, update, and delete information related to running a business via MySQL. Users are able to enter information regarding new departments, roles, and employees and then access or edit this subsequent information via the command line. Technologies used to create this app include; Node.js, MySQL, and more. This app can be accessed by downloading this repository, and running npm install in the command line. Simply enter "node index.js" to begin running the app following your download of the neccessary dependencies.
+The following is a command line application that will allow for users to create and update information related to running a business via MySQL. Users are able to enter information regarding new departments, roles, and employees and then access or edit this subsequent information via the command line. Technologies used to create this app include; Node.js, MySQL, and more. This app can be accessed by downloading this repository, and running npm install in the command line. Simply enter "node index.js" to begin running the app following your download of the neccessary dependencies.
 
 ## Description
 
