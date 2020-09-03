@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const axios = require("axios");
 require("console.table");
 
-// Users keep in mind to align the password and DB name to their unique DB password and name
+// Users keep in mind to align the password and DB name to their unique DB password and name, the information below will not work
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,

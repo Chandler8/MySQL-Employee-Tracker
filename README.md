@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-blueviolet.svg)
 
-The following is a command line application that will allow for users to create and update information related to running a business via MySQL. Users are able to enter information regarding new departments, roles, and employees and then access or edit this subsequent information via the command line. Technologies used to create this app include; Node.js, MySQL, and more. This app can be accessed by downloading this repository, and running npm install in the command line. Simply enter "node index.js" to begin running the app following your download of the neccessary dependencies.
+The following is a command line application that will allow for users to create and update information related to running a business via MySQL. Users are able to enter information regarding new departments, roles, and employees and then access or edit this subsequent information via the command line. Technologies used to create this app include; Node.js, MySQL, and more. This app can be accessed by downloading this repository, and running npm install in the command line. Simply enter "node index.js" to begin running the app following your download of the neccessary dependencies. To view this application in action please follow this link: https://drive.google.com/file/d/1H4HO7wsW4PvEtIkfDfQ4UpGqAMPbQTW9/view?usp=sharing
 
 ## Description
 
@@ -36,7 +36,7 @@ So that I can organize and plan my business
 * [License](#license)
 * [Questions](#questions)
 * [Contributors](#contributors)
-* [Images](#images)
+* [Media](#media)
 
 # License
 
@@ -57,8 +57,9 @@ Reach out to me via email regarding any questions or concerns with this project:
 
 # Media
 
-![](Assets/)
-![](Assets/)
+![](Assets/Tracker1.JPG)
+![](Assets/Tracker2.JPG)
+![](Assets/Tracker3.JPG)
 
 Link to video showcasing functionality
-- 
+- https://drive.google.com/file/d/1H4HO7wsW4PvEtIkfDfQ4UpGqAMPbQTW9/view?usp=sharing
