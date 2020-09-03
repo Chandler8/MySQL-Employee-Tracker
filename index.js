@@ -208,3 +208,55 @@ function deleteRole() {
         })
     })
 }
+
+// Update role_id for employees in the DB
+function updateEmployeeRole() {
+    inquirer.prompt([
+        {
+            message: "Employee to update? (enter employees id number)",
+            type: "input",
+            name: "id"
+        }, {
+            message: "enter the new role ID:",
+            type: "number",
+            name: "role_id"
+        }
+    ]).then(function (response) {
+        connection.query("UPDATE employee SET role_id = ? WHERE id = ?", [response.role_id, response.id], function (err, data) {
+            if (err) throw err;
+            console.table(data);
+            userInput();
+        })
+    })
+}
+
+
+// User can view all departments in the DB
+function viewDepartments() {
+    connection.query("SELECT * FROM department", function (err, data) {
+        if (err) throw err;
+        console.log(`\n`);
+        console.table(data);
+        userInput();
+    })
+}
+
+// User can view all employees in the DB
+function viewEmployees() {
+    connection.query("SELECT * FROM employee", function (err, data) {
+        if (err) throw err;
+        console.log(`\n`);
+        console.table(data);
+        userInput();
+    })
+}
+
+// User can view all roles in the DB
+function viewRoles() {
+    connection.query("SELECT * FROM role", function (err, data) {
+        if (err) throw err;
+        console.log(`\n`);
+        console.table(data);
+        userInput();
+    })
+}
